@@ -26,7 +26,7 @@ new Vue({
     };
   },
   mounted() {
-    this.fectchPhones();
+    this.fetchPhones();
     this.fetchContacts();
   },
   methods: {
@@ -43,7 +43,7 @@ new Vue({
           .then((response) => {
             this.saving = false;
             this.currentPhone = response.data;
-            this.fectchphones();
+            this.fetchphones();
 
           })
           .catch((err) => {
@@ -52,7 +52,7 @@ new Vue({
           })
       }
     },
-    fectchPhones() {
+    fetchPhones() {
       this.loading = true;
       let endpoint = `/api/v1/phone/`;
       
@@ -68,7 +68,7 @@ new Vue({
           })
       }
     },
-    fectchAddresses() {
+    fetchAddresses() {
         this.loading = true;
         let endpoint = `/api/v1/address/`;
         
@@ -109,7 +109,7 @@ new Vue({
             this.reset();
             this.saving = false;
 
-            this.fectchphones();
+            this.fetchPhones();
           })
           .catch((err) => {
             this.saving = false;
@@ -117,7 +117,7 @@ new Vue({
           })
       }
     },
-    fectchPhones(id) {
+    fetchPhone(id) {
       this.viewing = true;
       let endpoint = `/api/v1/phone/${id}/`;
       if (this.currentPhone) {

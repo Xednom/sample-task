@@ -28,7 +28,7 @@ new Vue({
     };
   },
   mounted() {
-    this.fetchContact();
+    this.fetchContacts();
   },
   methods: {
     reset: function () {
@@ -46,7 +46,7 @@ new Vue({
             this.currentContact = response.data;
             this.fetchContact();
 
-            $("#editCityModal").modal("hide")
+            $("#editContactModal").modal("hide")
           })
           .catch((err) => {
             this.saving = false;
@@ -54,7 +54,7 @@ new Vue({
           })
       }
     },
-    fetchContact() {
+    fetchContacts() {
       this.loading = true;
       let endpoint = `/api/v1/contact/`;
       

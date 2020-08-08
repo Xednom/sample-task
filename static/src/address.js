@@ -16,6 +16,9 @@ new Vue({
       adding: false,
       paging: false,
       currentAddress: {},
+      currentAddressStatus: {
+        'active_status': false,
+      },
       newAddress: {
         'contact': null,
         'address_1': "",
@@ -44,8 +47,9 @@ new Vue({
           .then((response) => {
             this.saving = false;
             this.currentAddress = response.data;
-            this.fectchAddress();
-
+            this.fectchAddresses();
+            
+            $("#editAddressModal").modal("hide");
           })
           .catch((err) => {
             this.saving = false;
@@ -102,7 +106,7 @@ new Vue({
           })
       }
     },
-    fectchAddress(id) {
+    fetchAddress(id) {
       this.viewing = true;
       let endpoint = `/api/v1/address/${id}/`;
       if (this.currentAddress) {
