@@ -15,4 +15,4 @@ class AdressSerializer(serializers.ModelSerializer):
 class AddressViewSet(viewsets.ModelViewSet):
     queryset = Address.objects.all()
     serializer_class = AdressSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]

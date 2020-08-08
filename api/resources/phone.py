@@ -1,10 +1,11 @@
 from rest_framework import serializers, viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from api.models import Phone
+from api.models import Phone, Contact
 
 
 class PhoneSerializer(serializers.ModelSerializer):
+    
     class Meta:
         model = Phone
         fields = "__all__"
@@ -14,4 +15,4 @@ class PhoneSerializer(serializers.ModelSerializer):
 class PhoneViewSet(viewsets.ModelViewSet):
     queryset = Phone.objects.all()
     serializer_class = PhoneSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
