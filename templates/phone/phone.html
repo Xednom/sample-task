@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12 col-sm-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Phone info</h4>
+            <div id="phone" v-cloak>
+                <form v-on:submit.prevent="addPhone">
+                    <div class="form-group">
+                        <label>Contact</label>
+                        <select class="form-control" v-model="newPhone.contact">
+                            <option v-for="item in contacts" :key="item.id">[[ item.id ]]</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" v-model="newPhone.phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Type</label>
+                        <select class="form-control" v-model="newPhone.phone_type">
+                            <option>Home</option>
+                            <option>Mobile</option>
+                            <option>Work</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" v-model="newPhone.primary">
+                            <label class="custom-control-label" for="customCheck1">Primary</label>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block api %}
+<script src="{% static 'src/phone.js' %}"></script>
+{% endblock %}

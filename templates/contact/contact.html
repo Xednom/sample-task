@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-12 col-sm-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Contact info</h4>
+            <div id="contact" v-cloak>
+                <form v-on:submit.prevent="addContact">
+                    <div class="form-group">
+                        <label>First name</label>
+                        <input type="text" class="form-control" v-model="newContact.first_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Middle name</label>
+                        <input type="text" class="form-control" v-model="newContact.middle_name">
+                    </div>
+                    <div class="form-group">
+                        <label>last name</label>
+                        <input type="text" class="form-control" v-model="newContact.last_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" v-model="newContact.email_address">
+                    </div>
+                    <div class="form-group">
+                        <label>Birthdate</label>
+                        <input type="date" class="form-control" v-model="newContact.birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Type</label>
+                        <select class="form-control" v-model="newContact.contact_type">
+                            <option>Patient</option>
+                            <option>Relative</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Patient Relationship</label>
+                        <select class="form-control" v-model="newContact.patient_relationship">
+                            <option>Self</option>
+                            <option>Father</option>
+                            <option>Mother</option>
+                            <option>Guardian</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block api %}
+<script src="{% static 'src/contact.js' %}"></script>
+{% endblock %}
