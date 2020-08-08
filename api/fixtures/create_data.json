@@ -1,0 +1,40 @@
+[{
+    "model": "api.contact",
+    "pk": 2,
+    "fields": {
+        "date_modified": "2020-08-08",
+        "active_status": true,
+        "first_name": "monde",
+        "middle_name": "basan",
+        "last_name": "lacanlalay",
+        "email_address": "monde.lacanlalay@gmail.com",
+        "gender": "Male",
+        "birthdate": null,
+        "contact_type": "Patient",
+        "patient_relationship": "Self"
+    }
+}, {
+    "model": "api.address",
+    "pk": 1,
+    "fields": {
+        "date_modified": "2020-08-08",
+        "active_status": true,
+        "contact": 2,
+        "address_1": "test",
+        "address_2": "test",
+        "city": "test",
+        "state": "test",
+        "zip_code": "test"
+    }
+}, {
+    "model": "api.phone",
+    "pk": 1,
+    "fields": {
+        "date_modified": "2020-08-08",
+        "active_status": true,
+        "contact": 2,
+        "phone": "12346789",
+        "phone_type": "Mobile",
+        "primary": true
+    }
+}]
