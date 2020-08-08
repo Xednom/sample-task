@@ -27,7 +27,7 @@ Migrate DB
 start local server
 ``` python manage.py runserver ```
 
-Create users(1 superuser and 1 normal account)
+Create users(1 superuser)
 ``` python manage.py loadddata user ```
 password for the created users is **fishmond22**
 
