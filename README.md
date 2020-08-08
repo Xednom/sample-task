@@ -36,3 +36,6 @@ Create api sample data for Contact, Address, Phone
 
 # Access the API endpoint
 To access the **API** root go to ```<localhost:8000>/api/v1/ or <127.0.0.1:8000>/api/v1/```
+
+# Access the Site
+To access the home page of the site go to ``` <localhost:8000> or  <127.0.0.1:8000>```
